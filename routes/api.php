@@ -24,7 +24,7 @@ Route::prefix('v1')->group(function () {
 
     Route::post('register', [AuthController::class, 'register']);
     Route::post('login', [AuthController::class, 'login']);
-    Route::get('login',function(){
+    Route::get('login', function () {
         return response()->json(['success' => false, 'errors' => 'Unauthorized'], 401);
     })->name('login');
     Route::middleware('auth:api')->group(function () {
