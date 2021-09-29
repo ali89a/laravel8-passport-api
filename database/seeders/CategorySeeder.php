@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class CategorySeeder extends Seeder
 {
@@ -13,6 +14,15 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        //
+        $data = [
+           
+            [
+                'name' => 'Admin',
+                'email' => 'admin@gmail.com',
+                'password' => bcrypt('12345678'),
+            ],
+        ];
+
+        DB::table('users')->insert($data);
     }
 }
