@@ -28,7 +28,7 @@ Route::prefix('v1')->group(function () {
         return response()->json(['success' => false, 'errors' => 'Unauthorized'], 401);
     })->name('login');
     Route::middleware('auth:api')->group(function () {
-        Route::resource('categories', CategoryController::class);
         Route::post('logout', [AuthController::class, 'logout'])->name('logout');
     });
+    Route::resource('categories', CategoryController::class);
 });

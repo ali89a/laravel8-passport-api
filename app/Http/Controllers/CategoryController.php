@@ -19,7 +19,7 @@ class CategoryController extends Controller
 
         $data = Category::all();
         if ($data) {
-            return send_response('Successfully Retrive.', CategoryResource::collection($data), Response::HTTP_FOUND);
+            return send_response('Successfully Retrive.', CategoryResource::collection($data), Response::HTTP_OK);
         } else {
             return send_error('Data Not Found!', [], Response::HTTP_NOT_FOUND);
         }
